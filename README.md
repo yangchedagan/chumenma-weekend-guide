@@ -2,6 +2,8 @@
 
 一个面向大学生的可交互中文产品原型：按兴趣、天气情景、人均预算与同行人数发现周末活动，串联组队邀请、打卡与攻略分享。
 
+[在线体验](https://chumenma-weekend-xuan-0915.yangchegan.chatgpt.site) · [艺术感与现代感：前端参考及改版方向](docs/design-references.md)
+
 ## 产品结构
 
 | 页面 | 解决的问题 | 可以完成的操作 |
