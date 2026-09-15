@@ -4,6 +4,10 @@
 
 [在线体验](https://chumenma-weekend-xuan-0915.yangchegan.chatgpt.site) · [艺术感与现代感：前端参考及改版方向](docs/design-references.md)
 
+## 视觉设计
+
+以“城市文化刊物”为方向：黑白与朱红、宋体标题、文字分类目录和有主次的图片编排。桌面保留轻量出行单侧栏，手机提供底部入口。活动照片可展开为详情并收回，支持键盘与减少动态效果设置；搭子、攻略和足迹延续同一套排版。具体参考、实现与验证见上方设计文档。
+
 ## 产品结构
 
 | 页面 | 解决的问题 | 可以完成的操作 |
@@ -44,7 +48,7 @@ flowchart LR
 - 预算为示例估算，不含往返交通和餐饮，实际开放、预约、票价需向场所核实。
 - 收藏、打卡、攻略与出行计划保存在当前浏览器的 `localStorage`。清除浏览器数据后会丢失，没有云端账户或跨设备同步。
 - 组队邀请与攻略全文被编码到 URL fragment 中，朋友可直接打开并保存副本；人数是计划人数，没有后台报名、实时成员同步或聊天。
-- 图片随站点静态部署。上海图为城市风景，展览和林间步道图为类别示意，均非具体活动现场实拍。
+- 六类图片随站点静态部署：城市、展览、林间步道、街区、书店、音乐现场。均为类别示意，并非具体路线或场所实拍；详情中可查看作者和来源。
 
 ## 技术架构
 
@@ -57,7 +61,7 @@ scripts/serve.mjs     零依赖本地静态服务器
 .openai/hosting.json  固定站点身份与静态部署目录
 ```
 
-原生 HTML / CSS / JavaScript，零构建、零安装依赖。状态采用“活动数据 → 条件筛选 → 推荐排序 → 页面渲染”的单向流程，用户生成文本进行 HTML 转义，分享参数经过类型和活动 ID 校验。原生 `dialog` 支持键盘关闭，重要表单具有标签与必填约束。
+原生 HTML / CSS / JavaScript，零构建、零安装依赖。状态采用“活动数据 → 条件筛选 → 推荐排序 → 页面渲染”的单向流程，用户生成文本进行 HTML 转义，分享参数经过类型和活动 ID 校验。原生 `dialog` 支持键盘关闭与焦点恢复，重要表单具有标签与必填约束。图片展开使用原生 Web Animations，根据源图与目标图的位置和大小计算过渡，并尊重系统减少动态效果设置。宋体优先加载 Google Fonts 的 Noto Serif SC，加载不可用时回退到系统宋体。
 
 ### 本地运行
 
@@ -76,4 +80,7 @@ npm run dev
 - 上海城市风光：[Night Glow / Unsplash](https://unsplash.com/photos/uvnMzTq2YeI)
 - 展览空间：[Dannie Jing / Unsplash](https://unsplash.com/photos/3GZlhROZIQg)
 - 林间步道：[Niki Clark / Unsplash](https://unsplash.com/photos/X7u11c5-c5Q)
+- 音乐现场：[Jay Wennington / Unsplash](https://unsplash.com/photos/silhouette-of-people--zq4kO_-GxA)
+- 书店：[Johnny / Unsplash](https://unsplash.com/photos/a-library-filled-with-lots-of-wooden-shelves-filled-with-books-hrMibbC0bnc)
+- 城市街区：[Margo Evardson / Unsplash](https://unsplash.com/photos/busy-street-with-chinese-flags-and-shops-jSMq_GguwSY)
 - 使用许可：[Unsplash License](https://unsplash.com/license)
