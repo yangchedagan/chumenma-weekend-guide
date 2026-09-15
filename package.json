@@ -1,0 +1,1 @@
+{"name":"chumenma-weekend-guide","version":"1.0.0","private":true,"description":"出门吗 · 周末城市探索指南","scripts":{"dev":"node scripts/serve.mjs","start":"node scripts/serve.mjs","check":"node --check dist/app.js"},"engines":{"node":">=18"}}
